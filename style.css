@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, san-serif;
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 50px;
+
+    background: #020617;
+    border-bottom: 1px solid #1e293b;
+}
+
+nav h1 {
+    color: #38bdf8;
+    font-size: 35px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px
+}
+
+.nav-links a:hover {
+    color: #38bdf8;
+}
+
+ main {
+    padding: 40px;
+}
+.app-container {
+    width: 100%;
+    max-width: 1100px;
+
+    background: #1e293b;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.top-selection h2 {
+    color: #38bdf8;
+    font-size: 32px;
+
+    margin-bottom: 10px;
+}
+
+.top-selection p {
+    color: #cbd5e1;
+    font-size: 18px;
+}
+
+.task-input {
+    display: flex;
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+
+    margin-top: 30px;
+}
+
+.card {
+    flex: 1;
+
+    background: #0f172a;
+
+    padding: 25px;
+
+    border-radius: 14px;
+
+    border: 1px solid #334155;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color:#38bdf8;
+}
+
+.card h3 {
+    color: #38bdf8;
+    font-size: 42px;
+}
+
+.card p {
+    margin-top: 10px;
+    color:#cbd5e1;
+}
+
+.task-input {
+    display: flex;
+    gap: 12px;
+
+    margin-top: 35px;
+}
+
+input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #0f172a;
+    color: white;
+
+    font-size:16px;
+}
+
+button {
+     padding: 15px 22px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #38bdf8;
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0ea5e9;
+    transform: scale(1.03);
+
+}
+
+ul {
+    list-style: none;
+    margin-top: 30px;
+}
+
+li {
+    background: #0f172a;
+
+    padding: 16px;
+
+    border-radius: 10px;
+
+    margin-top: 14px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 1px solid #334155;
+
+    transition: 0.3s;
+}
+
+li:hover {
+    border-color: 38bdfe;
+}
