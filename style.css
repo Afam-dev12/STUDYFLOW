@@ -178,5 +178,6 @@ li {
 }
 
 li:hover {
-    border-color: 38bdfe;
+    transform: translateX(5px);
+    border-color: 38bdf8;
 }
