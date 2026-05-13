@@ -78,7 +78,7 @@ function toggleTask(index) {
     tasks[index].completed = !tasks[index].completed;
 
     saveTasks();
-    renderTaskks();
+    renderTasks();
 }
 
 function deleteTask(index) {
