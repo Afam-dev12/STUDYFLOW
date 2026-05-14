@@ -68,7 +68,7 @@ function renderTasks() {
                 type="checkbox"
                 ${task.completed ? "checked" : ""}
                 onclick="toggleTask(${index})"
-            >S    
+            >    
          
 
           <span
