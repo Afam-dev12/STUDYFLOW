@@ -35,6 +35,18 @@ function renderTasks() {
 
     taskList.innerHTML = "";
 
+    if(tasks.length === 0) {
+
+        taskList.innerHTML =`
+          <p style="
+              margin-top:20px;
+              color:#94a3b8;
+          ">
+              NO tasks yet. Add one to get started
+          </p>    
+          `;
+    }
+
     let completed = 0;
 
     tasks.forEach((task, index) => {
@@ -46,12 +58,27 @@ function renderTasks() {
         const li = document.createElement("li");
 
         li.innerHTML =`
+         <div style="
+           display:flex;
+           align-items:center;
+           gap:12px;
+        "> 
+
+           <input
+                type="checkbox"
+                ${task.completed ? "checked" : ""}
+                onclick="toggleTask(${index})"
+            >S    
+         
+
           <span
               onclick="toggleTask(${index})"
               style="
                 cursor:pointer;
                 text-decoration:${task.completed ? "line-through" : "none"};
                 opacity:${task.completed ? "0.6" : "1"};
+
+                color:${task.completed ? "#22c55e" : "white"};
               " 
          > 
             
@@ -93,3 +120,10 @@ function saveTasks() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 
 }      
+
+taskInput.addEventListener("keypress", function(event) {
+
+    if (event.key ==="Enter") {
+        addTask();
+    }
+});
