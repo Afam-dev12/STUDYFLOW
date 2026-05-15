@@ -14,13 +14,25 @@
         <!-- SIDEBAR -->
 
     <aside>
+       <div class="logo">
+            <h1>StudyFlow</h1>
+            <p>Productivity APP</p>
+       </div>
 
-        <h1>StudyFlow</h1>
+        <div class="menu">
 
-        <div class="nav-links">
-            <a href="#">Dashboard</a>
-            <a href="#">Tasks</a>
-            <a href="#">Settings</a>
+            <a href="#" class="active">
+                Dashboard
+            </a>
+
+            <a href="#" class="active">
+                Tasks
+            </a>
+
+            <a href="#">
+                Settings
+            </a>
+            
         </div>
 
     </aside>
@@ -60,6 +72,22 @@
             <button onclick="addTask()">
                 Add Task
             </button>
+        </div>
+
+        <div class="filters">
+
+            <button onclick="filterTasks('all')">
+                ALL
+            </button>
+
+            <button onclick="filterTasks('completed')">
+                Completed
+            </button>
+
+            <button onclick="filterTasks('pending')">
+                Pending
+            </button>
+            
         </div>
 
         <ul id="taskList"></ul> 

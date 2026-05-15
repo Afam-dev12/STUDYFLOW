@@ -6,6 +6,7 @@ const completedTasks = document.querySelectorAll(".card h3")[1];
 const pendingTasks = document.querySelectorAll(".card h3")[2]
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+let currentFilter = "all";
 
 renderTasks();
 
@@ -31,6 +32,13 @@ function addTask() {
     taskInput.value = "";
 }
 
+function filterTasks(filter) {
+
+    currentFilter =filter;
+
+    renderTasks();
+}
+
 function renderTasks() {
 
     taskList.innerHTML = "";
@@ -49,7 +57,20 @@ function renderTasks() {
 
     let completed = 0;
 
-    tasks.forEach((task, index) => {
+    tasks
+    .filter(task => {
+
+        if (currentFilter ==="completed") {
+            return task.completed
+        }
+
+        if (currentFilter === "pending") {
+            return !task.completed;
+        }
+
+        return true;
+    })
+    .forEach((task, index) => {
 
         if (task.completed) {
             completed++;
@@ -72,7 +93,7 @@ function renderTasks() {
          
 
           <span
-              onclick="toggleTask(${index})"
+              onclick="toggleTask(tasks.indexOf(task))"
               style="
                 cursor:pointer;
                 text-decoration:${task.completed ? "line-through" : "none"};
@@ -84,6 +105,8 @@ function renderTasks() {
             
                ${task.text}
          </span>   
+
+        </div>
 
          <button onclick="deleteTask(${index})">
               delete
